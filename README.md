@@ -49,3 +49,11 @@ python manage.py collectstatic
 ```
 python manage.py runserver
 ```
+
+
+I accidentally posted one of my secret keys publicly so I cleared the git cache
+```
+git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch flowtada/settings.py' \
+--prune-empty --tag-name-filter cat -- --all
+```
