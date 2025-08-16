@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="#1e293b"/>
+  <!-- Perfectly Centered FLO✓✓ -->
+  <text x="32" y="40" font-family="Monaco, monospace" font-size="14" font-weight="700" fill="white" text-anchor="middle">FLO</text>
+  <text x="48" y="38" font-family="Arial, sans-serif" font-size="10" font-weight="900" fill="#fbbf24">✓✓</text>
+</svg>

@@ -1,0 +1,273 @@
+<!-- templates/core/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}FlowTada - CRM Solutions for Growing Businesses{% endblock %}
+
+{% block meta_description %}Transform your business with FlowTada CRM. Streamline customer relationships, boost sales, and grow faster with our intuitive platform for small and medium businesses.{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your Business with Smart CRM</h1>
+                    <p>FlowTada helps small and medium businesses streamline customer relationships, boost sales, and grow faster with our intuitive CRM platform.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary" onclick="startTrial()">Start Free Trial</a>
+                        <a href="#" class="btn btn-secondary">Watch Demo</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="dashboard-mockup">
+                        <div class="mockup-header">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="mockup-content">
+                            <h3>Sales Dashboard</h3>
+                            <div class="chart-placeholder">
+                                <div class="chart-bars">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                            <p>Real-time insights • Customer tracking • Sales automation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="fade-in">Powerful Features for Growing Businesses</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Get deep insights into your sales performance, customer behavior, and business growth with comprehensive reporting and real-time dashboards.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Contact Management</h3>
+                    <p>Organize and track all customer interactions, communications, and relationship history in one centralized, easy-to-use platform.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Sales Automation</h3>
+                    <p>Automate repetitive tasks, follow-up emails, and sales processes to focus more time on closing deals and building relationships.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Access your CRM anywhere, anytime with our fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Easy Integrations</h3>
+                    <p>Connect with your favorite tools and services including email platforms, marketing automation, and accounting software.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Enterprise Security</h3>
+                    <p>Your data is protected with bank-level security, SSL encryption, and regular backups to ensure complete peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>10,000+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>99.9%</h3>
+                    <p>Uptime Guarantee</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>50%</h3>
+                    <p>Average Sales Increase</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>24/7</h3>
+                    <p>Customer Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content fade-in">
+                <h2>Get in Touch</h2>
+                <p>Ready to transform your business? Contact us today for a personalized demo.</p>
+
+                <form class="contact-form" onsubmit="handleContactSubmission(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-company">Company (Optional)</label>
+                        <input type="text" id="contact-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join thousands of businesses that trust FlowTada to manage their customer relationships and drive growth.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary" onclick="startTrial()">Start Your Free Trial</a>
+                    <a href="#" class="btn btn-secondary">Schedule Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trial Signup Modal -->
+    <div class="portal-modal" id="trialModal">
+        <div class="portal-content">
+            <button class="close-modal" onclick="closeTrialModal()">&times;</button>
+            <h2>Start Your Free Trial</h2>
+            <p>Get instant access to FlowTada CRM. No credit card required.</p>
+            <form class="portal-form" onsubmit="handleTrialSignup(event)">
+                <div class="form-group">
+                    <label for="trial-first-name">First Name</label>
+                    <input type="text" id="trial-first-name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="trial-last-name">Last Name</label>
+                    <input type="text" id="trial-last-name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="trial-email">Email Address</label>
+                    <input type="email" id="trial-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="trial-company">Company</label>
+                    <input type="text" id="trial-company" name="company">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Start Free Trial</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Trial signup functions
+function startTrial() {
+    document.getElementById('trialModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTrialModal() {
+    document.getElementById('trialModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Handle trial signup
+function handleTrialSignup(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Creating Account...';
+    submitBtn.disabled = true;
+
+    fetch('/api/trial/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': window.CSRF_TOKEN
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            alert(data.message);
+            if (data.redirect) {
+                window.location.href = data.redirect;
+            } else {
+                closeTrialModal();
+            }
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        alert('An error occurred. Please try again.');
+    })
+    .finally(() => {
+        submitBtn.textContent = 'Start Free Trial';
+        submitBtn.disabled = false;
+    });
+}
+
+// Handle contact form
+function handleContactSubmission(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    fetch('/api/contact/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': window.CSRF_TOKEN
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        if (data.status === 'success') {
+            event.target.reset();
+        }
+    })
+    .catch(error => {
+        alert('An error occurred. Please try again.');
+    })
+    .finally(() => {
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+    });
+}
+</script>
+{% endblock %}

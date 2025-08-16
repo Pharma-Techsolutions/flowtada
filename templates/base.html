@@ -1,0 +1,138 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_title|default:"FlowTada - CRM Solutions" }}{% endblock %}</title>
+
+    <!-- Meta tags -->
+    <meta name="description" content="{% block meta_description %}{{ meta_description|default:"Transform your business with FlowTada CRM. Streamline customer relationships and boost sales." }}{% endblock %}">
+    <meta name="keywords" content="CRM, customer relationship management, sales, small business, medium business">
+
+    <!-- Favicon -->
+    {% load static %}
+    <link rel="icon" type="image/png" href="{% static 'images/FLOWTADA-favicon-mac.png' %}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="{% url 'core:home' %}">
+                    <img src="{% static 'images/FLOWTADA-main-logo.png' %}" alt="FlowTada" class="logo-img">
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="{% url 'core:home' %}#features">Features</a></li>
+                <li><a href="{% url 'core:pricing' %}">Pricing</a></li>
+                <li><a href="{% url 'core:about' %}">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'portal:dashboard' %}" class="btn btn-secondary">Dashboard</a>
+                    <a href="{% url 'portal:logout' %}" class="btn btn-primary">Logout</a>
+                {% else %}
+                    <a href="{% url 'portal:login' %}" class="btn btn-secondary">Customer Portal</a>
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                {% endif %}
+            </div>
+
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="mobile-menu">
+                <a href="{% url 'core:home' %}#features">Features</a>
+                <a href="{% url 'core:pricing' %}">Pricing</a>
+                <a href="{% url 'core:about' %}">About</a>
+                <a href="#contact">Contact</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'portal:dashboard' %}">Dashboard</a>
+                    <a href="{% url 'portal:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'portal:login' %}">Customer Portal</a>
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- Messages -->
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FlowTada</h3>
+                    <p>Empowering businesses with smart CRM solutions that drive growth and success.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="{% url 'core:home' %}#features">Features</a></li>
+                        <li><a href="{% url 'core:pricing' %}">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="{% url 'core:about' %}">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FlowTada. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+
+    <!-- CSRF Token for AJAX -->
+    <script>
+        window.CSRF_TOKEN = '{{ csrf_token }}';
+    </script>
+</body>
+</html>
