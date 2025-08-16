@@ -37,6 +37,13 @@ function toggleMobileMenu() {
     mobileMenu.classList.toggle('active');
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+});
+
 // Portal modal functions
 function openPortal() {
     document.getElementById('portalModal').style.display = 'flex';
