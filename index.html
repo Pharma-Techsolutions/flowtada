@@ -28,6 +28,23 @@
                 <a href="#" class="btn btn-secondary">Customer Portal</a>
                 <a href="#" class="btn btn-primary">Start Free Trial</a>
             </div>
+
+            <!-- hamburger menu -->
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- mobile menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="btn btn-secondary">Customer Portal</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
         </nav>
     </header>
 
@@ -189,5 +206,29 @@
     </footer>
 
     <script src="static/js/main.js"></script>
+    <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const nav = document.querySelector('nav');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (!nav.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        });
+    });
+    </script>
 </body>
 </html>

@@ -408,10 +408,29 @@ footer {
     background: white;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     padding: 2rem;
+    z-index: 1000;
+    border-top: 1px solid #e2e8f0;
 }
 
 .mobile-menu.active {
     display: flex;
+}
+
+.mobile-menu a {
+    padding: 1rem 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 1px solid #f7f8fc;
+}
+
+.mobile-menu a:hover {
+    color: #ff6b35;
+}
+
+.mobile-menu .btn {
+    margin: 0.5rem 0;
+    text-align: center;
 }
 
 /* Mobile Menu Styles */
@@ -430,22 +449,8 @@ footer {
     transition: 0.3s;
 }
 
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 2rem;
-    z-index: 1000;
-}
 
-.mobile-menu.active {
-    display: flex;
-}
+
 
 /* Contact Form Mobile */
 .contact-section {
@@ -461,7 +466,8 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
+    .nav-links,
+        .cta-buttons {
         display: none;
     }
 
