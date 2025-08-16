@@ -48,6 +48,7 @@ python manage.py collectstatic
 #### 2..5 Run development server
 ```
 python manage.py runserver
+<<<<<<< HEAD
 ```
 
 
@@ -56,4 +57,6 @@ I accidentally posted one of my secret keys publicly so I cleared the git cache
 git filter-branch --force --index-filter \
 'git rm --cached --ignore-unmatch flowtada/settings.py' \
 --prune-empty --tag-name-filter cat -- --all
+=======
+>>>>>>> 64df69ce075b513cacf2561351803a4bf115fca4
 ```
