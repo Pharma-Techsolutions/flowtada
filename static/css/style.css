@@ -493,52 +493,12 @@ footer {
     .hamburger {
         display: flex;
     }
+
     /* Hide desktop buttons on mobile */
     .cta-buttons:not(.mobile-buttons) {
         display: none;
     }
 
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .features h2,
-    .cta-content h2 {
-        font-size: 2rem;
-    }
-
-    .dashboard-mockup {
-        transform: none;
-        max-width: 100%;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form {
-        padding: 2rem;
-    }
-
-    nav {
-        padding: 1rem;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
 }
 
 @media (min-width: 769px) {
