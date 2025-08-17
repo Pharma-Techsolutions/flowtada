@@ -1,32 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowTada - CRM Solutions for Growing Businesses</title>
-    <meta name="description" content="Transform your business with FlowTada CRM. Streamline customer relationships, boost sales, and grow faster with our intuitive platform for small and medium businesses.">
-    <link rel="stylesheet" href="static/css/style.css">
+    <title id="page-title">FlowTada - CRM Solutions for Growing Businesses</title>
+    <meta name="description" content="Transform your business with FlowTada CRM. Streamline customer relationships, boost sales, and grow faster with our intuitive platform for small and medium businesses." id="page-description">
+
+    <!-- Fixed CSS path for GitHub Pages -->
+    <link rel="stylesheet" href="./static/css/style.css">
+
+    <!-- Thai Font Support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Additional Language Switcher Styles */
+        .floating-language-switcher {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .lang-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Thai font support */
+        .thai-text {
+            font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .floating-language-switcher {
+                right: 10px;
+                top: auto;
+                bottom: 20px;
+                transform: none;
+            }
+
+            .lang-btn {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Floating Language Switcher -->
+    <div class="floating-language-switcher">
+        <button onclick="toggleLanguage()" class="lang-btn" id="language-toggle">
+            🇹🇭 ไทย
+        </button>
+    </div>
+
     <!-- Header -->
     <header>
         <nav>
             <div class="logo-container">
                 <a href="/">
-                    <img src="static/images/FLOWTADA-main-logo.png" alt="FlowTada" class="logo-img">
+                    <!-- Fixed image path for GitHub Pages -->
+                    <img src="./static/images/FLOWTADA-main-logo.png" alt="FlowTada" class="logo-img">
                 </a>
             </div>
-            
+
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#features" data-en="Features" data-th="คุณสมบัติ">Features</a></li>
+                <li><a href="#pricing" data-en="Pricing" data-th="ราคา">Pricing</a></li>
+                <li><a href="#about" data-en="About" data-th="เกี่ยวกับเรา">About</a></li>
+                <li><a href="#contact" data-en="Contact" data-th="ติดต่อเรา">Contact</a></li>
             </ul>
-            
+
             <div class="cta-buttons desktop-only">
-                <a href="#" class="btn btn-secondary">Customer Portal</a>
-                <a href="#" class="btn btn-primary">Start Free Trial</a>
+                <a href="#" class="btn btn-secondary" data-en="Customer Portal" data-th="พอร์ทัลลูกค้า">Customer Portal</a>
+                <a href="#" class="btn btn-primary" data-en="Start Free Trial" data-th="เริ่มทดลองใช้ฟรี">Start Free Trial</a>
             </div>
 
             <!-- hamburger menu -->
@@ -38,13 +110,13 @@
 
             <!-- mobile menu -->
             <div class="mobile-menu" id="mobileMenu">
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#features" data-en="Features" data-th="คุณสมบัติ">Features</a>
+                <a href="#pricing" data-en="Pricing" data-th="ราคา">Pricing</a>
+                <a href="#about" data-en="About" data-th="เกี่ยวกับเรา">About</a>
+                <a href="#contact" data-en="Contact" data-th="ติดต่อเรา">Contact</a>
                 <div class="mobile-buttons">
-                    <a href="#" class="btn btn-secondary">Customer Portal</a>
-                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#" class="btn btn-secondary" data-en="Customer Portal" data-th="พอร์ทัลลูกค้า">Customer Portal</a>
+                    <a href="#" class="btn btn-primary" data-en="Start Free Trial" data-th="เริ่มทดลองใช้ฟรี">Start Free Trial</a>
                 </div>
             </div>
         </nav>
@@ -55,11 +127,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Transform Your Business with Smart CRM</h1>
-                    <p>FlowTada helps small and medium businesses streamline customer relationships, boost sales, and grow faster with our intuitive CRM platform.</p>
+                    <h1 data-en="Transform Your Business with Smart CRM" data-th="เปลี่ยนแปลงธุรกิจของคุณด้วย CRM อัจฉริยะ">Transform Your Business with Smart CRM</h1>
+                    <p data-en="FlowTada helps small and medium businesses streamline customer relationships, boost sales, and grow faster with our intuitive CRM platform." data-th="FlowTada ช่วยธุรกิจขนาดเล็กและกลางปรับปรุงความสัมพันธ์กับลูกค้า เพิ่มยอดขาย และเติบโตได้เร็วขึ้นด้วยแพลตฟอร์ม CRM ที่ใช้งานง่าย">FlowTada helps small and medium businesses streamline customer relationships, boost sales, and grow faster with our intuitive CRM platform.</p>
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary">Start Free Trial</a>
-                        <a href="#" class="btn btn-secondary">Watch Demo</a>
+                        <a href="#" class="btn btn-primary" data-en="Start Free Trial" data-th="เริ่มทดลองใช้ฟรี">Start Free Trial</a>
+                        <a href="#" class="btn btn-secondary" data-en="Watch Demo" data-th="ดูตัวอย่าง">Watch Demo</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -70,7 +142,7 @@
                             <div class="dot"></div>
                         </div>
                         <div class="mockup-content">
-                            <h3>Sales Dashboard</h3>
+                            <h3 data-en="Sales Dashboard" data-th="แดชบอร์ดยอดขาย">Sales Dashboard</h3>
                             <div class="chart-placeholder">
                                 <div class="chart-bars">
                                     <div class="bar"></div>
@@ -80,7 +152,7 @@
                                     <div class="bar"></div>
                                 </div>
                             </div>
-                            <p>Real-time insights • Customer tracking • Sales automation</p>
+                            <p data-en="Real-time insights • Customer tracking • Sales automation" data-th="ข้อมูลเชิงลึกแบบเรียลไทม์ • การติดตามลูกค้า • ระบบขายอัตโนมัติ">Real-time insights • Customer tracking • Sales automation</p>
                         </div>
                     </div>
                 </div>
@@ -91,37 +163,37 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="fade-in">Powerful Features for Growing Businesses</h2>
+            <h2 class="fade-in" data-en="Powerful Features for Growing Businesses" data-th="คุณสมบัติที่ทรงพลังสำหรับธุรกิจที่กำลังเติบโต">Powerful Features for Growing Businesses</h2>
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📊</div>
-                    <h3>Advanced Analytics</h3>
-                    <p>Get deep insights into your sales performance, customer behavior, and business growth with comprehensive reporting and real-time dashboards.</p>
+                    <h3 data-en="Advanced Analytics" data-th="การวิเคราะห์ขั้นสูง">Advanced Analytics</h3>
+                    <p data-en="Get deep insights into your sales performance, customer behavior, and business growth with comprehensive reporting and real-time dashboards." data-th="รับข้อมูลเชิงลึกเกี่ยวกับประสิทธิภาพการขาย พฤติกรรมลูกค้า และการเติบโตของธุรกิจด้วยรายงานที่ครอบคลุมและแดชบอร์ดแบบเรียลไทม์">Get deep insights into your sales performance, customer behavior, and business growth with comprehensive reporting and real-time dashboards.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🤝</div>
-                    <h3>Contact Management</h3>
-                    <p>Organize and track all customer interactions, communications, and relationship history in one centralized, easy-to-use platform.</p>
+                    <h3 data-en="Contact Management" data-th="การจัดการผู้ติดต่อ">Contact Management</h3>
+                    <p data-en="Organize and track all customer interactions, communications, and relationship history in one centralized, easy-to-use platform." data-th="จัดระเบียบและติดตามการปฏิสัมพันธ์กับลูกค้า การสื่อสาร และประวัติความสัมพันธ์ทั้งหมดในแพลตฟอร์มส่วนกลางที่ใช้งานง่าย">Organize and track all customer interactions, communications, and relationship history in one centralized, easy-to-use platform.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">⚡</div>
-                    <h3>Sales Automation</h3>
-                    <p>Automate repetitive tasks, follow-up emails, and sales processes to focus more time on closing deals and building relationships.</p>
+                    <h3 data-en="Sales Automation" data-th="ระบบขายอัตโนมัติ">Sales Automation</h3>
+                    <p data-en="Automate repetitive tasks, follow-up emails, and sales processes to focus more time on closing deals and building relationships." data-th="ทำงานซ้ำๆ อีเมลติดตาม และกระบวนการขายแบบอัตโนมัติ เพื่อใช้เวลามากขึ้นในการปิดดีลและสร้างความสัมพันธ์">Automate repetitive tasks, follow-up emails, and sales processes to focus more time on closing deals and building relationships.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📱</div>
-                    <h3>Mobile Access</h3>
-                    <p>Access your CRM anywhere, anytime with our fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
+                    <h3 data-en="Mobile Access" data-th="การเข้าถึงผ่านมือถือ">Mobile Access</h3>
+                    <p data-en="Access your CRM anywhere, anytime with our fully responsive design that works perfectly on desktop, tablet, and mobile devices." data-th="เข้าถึง CRM ของคุณได้ทุกที่ทุกเวลาด้วยดีไซน์ที่ตอบสนองอย่างสมบูรณ์ที่ทำงานได้อย่างสมบูรณ์แบบบนเดสก์ท็อป แท็บเล็ต และอุปกรณ์มือถือ">Access your CRM anywhere, anytime with our fully responsive design that works perfectly on desktop, tablet, and mobile devices.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🔗</div>
-                    <h3>Easy Integrations</h3>
-                    <p>Connect with your favorite tools and services including email platforms, marketing automation, and accounting software.</p>
+                    <h3 data-en="Easy Integrations" data-th="การเชื่อมต่อที่ง่าย">Easy Integrations</h3>
+                    <p data-en="Connect with your favorite tools and services including email platforms, marketing automation, and accounting software." data-th="เชื่อมต่อกับเครื่องมือและบริการที่คุณชื่นชอบ รวมถึงแพลตฟอร์มอีเมล ระบบการตลาดอัตโนมัติ และซอฟต์แวร์บัญชี">Connect with your favorite tools and services including email platforms, marketing automation, and accounting software.</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Enterprise Security</h3>
-                    <p>Your data is protected with bank-level security, SSL encryption, and regular backups to ensure complete peace of mind.</p>
+                    <h3 data-en="Enterprise Security" data-th="ความปลอดภัยระดับองค์กร">Enterprise Security</h3>
+                    <p data-en="Your data is protected with bank-level security, SSL encryption, and regular backups to ensure complete peace of mind." data-th="ข้อมูลของคุณได้รับการปกป้องด้วยความปลอดภัยระดับธนาคาร การเข้ารหัส SSL และการสำรองข้อมูลอย่างสม่ำเสมอเพื่อให้มั่นใจได้อย่างสมบูรณ์">Your data is protected with bank-level security, SSL encryption, and regular backups to ensure complete peace of mind.</p>
                 </div>
             </div>
         </div>
@@ -133,19 +205,19 @@
             <div class="stats-grid">
                 <div class="stat-item fade-in">
                     <h3>10,000+</h3>
-                    <p>Happy Customers</p>
+                    <p data-en="Happy Customers" data-th="ลูกค้าที่มีความสุข">Happy Customers</p>
                 </div>
                 <div class="stat-item fade-in">
                     <h3>99.9%</h3>
-                    <p>Uptime Guarantee</p>
+                    <p data-en="Uptime Guarantee" data-th="รับประกันการใช้งาน">Uptime Guarantee</p>
                 </div>
                 <div class="stat-item fade-in">
                     <h3>50%</h3>
-                    <p>Average Sales Increase</p>
+                    <p data-en="Average Sales Increase" data-th="การเพิ่มขึ้นของยอดขายโดยเฉลี่ย">Average Sales Increase</p>
                 </div>
                 <div class="stat-item fade-in">
                     <h3>24/7</h3>
-                    <p>Customer Support</p>
+                    <p data-en="Customer Support" data-th="การสนับสนุนลูกค้า">Customer Support</p>
                 </div>
             </div>
         </div>
@@ -155,11 +227,11 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Join thousands of businesses that trust FlowTada to manage their customer relationships and drive growth.</p>
+                <h2 data-en="Ready to Transform Your Business?" data-th="พร้อมที่จะเปลี่ยนแปลงธุรกิจของคุณหรือยัง?">Ready to Transform Your Business?</h2>
+                <p data-en="Join thousands of businesses that trust FlowTada to manage their customer relationships and drive growth." data-th="เข้าร่วมกับธุรกิจหลายพันแห่งที่วางใจ FlowTada ในการจัดการความสัมพันธ์กับลูกค้าและขับเคลื่อนการเติบโต">Join thousands of businesses that trust FlowTada to manage their customer relationships and drive growth.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">Start Your Free Trial</a>
-                    <a href="#" class="btn btn-secondary">Schedule Demo</a>
+                    <a href="#" class="btn btn-primary" data-en="Start Your Free Trial" data-th="เริ่มทดลองใช้ฟรี">Start Your Free Trial</a>
+                    <a href="#" class="btn btn-secondary" data-en="Schedule Demo" data-th="จองการสาธิต">Schedule Demo</a>
                 </div>
             </div>
         </div>
@@ -171,45 +243,97 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>FlowTada</h3>
-                    <p>Empowering businesses with smart CRM solutions that drive growth and success.</p>
+                    <p data-en="Empowering businesses with smart CRM solutions that drive growth and success." data-th="เสริมพลังธุรกิจด้วยโซลูชัน CRM อัจฉริยะที่ขับเคลื่อนการเติบโตและความสำเร็จ">Empowering businesses with smart CRM solutions that drive growth and success.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Product</h3>
+                    <h3 data-en="Product" data-th="ผลิตภัณฑ์">Product</h3>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">API</a></li>
+                        <li><a href="#features" data-en="Features" data-th="คุณสมบัติ">Features</a></li>
+                        <li><a href="#" data-en="Pricing" data-th="ราคา">Pricing</a></li>
+                        <li><a href="#" data-en="Integrations" data-th="การเชื่อมต่อ">Integrations</a></li>
+                        <li><a href="#" data-en="API" data-th="API">API</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Company</h3>
+                    <h3 data-en="Company" data-th="บริษัท">Company</h3>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" data-en="About Us" data-th="เกี่ยวกับเรา">About Us</a></li>
+                        <li><a href="#" data-en="Careers" data-th="ร่วมงานกับเรา">Careers</a></li>
+                        <li><a href="#" data-en="Press" data-th="ข่าวสาร">Press</a></li>
+                        <li><a href="#" data-en="Contact" data-th="ติดต่อเรา">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Support</h3>
+                    <h3 data-en="Support" data-th="ฝ่ายสนับสนุน">Support</h3>
                     <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Status</a></li>
+                        <li><a href="#" data-en="Help Center" data-th="ศูนย์ช่วยเหลือ">Help Center</a></li>
+                        <li><a href="#" data-en="Documentation" data-th="เอกสารประกอบ">Documentation</a></li>
+                        <li><a href="#" data-en="Community" data-th="ชุมชน">Community</a></li>
+                        <li><a href="#" data-en="Status" data-th="สถานะระบบ">Status</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 FlowTada. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2025 FlowTada. <span data-en="All rights reserved." data-th="สงวนลิขสิทธิ์">All rights reserved.</span> | <a href="#" data-en="Privacy Policy" data-th="นโยบายความเป็นส่วนตัว">Privacy Policy</a> | <a href="#" data-en="Terms of Service" data-th="เงื่อนไขการใช้บริการ">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
-    <script src="static/js/main.js"></script>
+    <!-- Fixed JS path for GitHub Pages -->
+    <script src="./static/js/main.js"></script>
     <script>
-    // Mobile menu toggle
+    // Language switching functionality
+    let currentLanguage = localStorage.getItem('language') || 'en';
+
+    function toggleLanguage() {
+        currentLanguage = currentLanguage === 'en' ? 'th' : 'en';
+        localStorage.setItem('language', currentLanguage);
+        updateLanguage();
+    }
+
+    function updateLanguage() {
+        const elements = document.querySelectorAll('[data-en][data-th]');
+        const langToggle = document.getElementById('language-toggle');
+        const htmlRoot = document.getElementById('html-root');
+        const pageTitle = document.getElementById('page-title');
+        const pageDescription = document.getElementById('page-description');
+
+        // Update HTML lang attribute
+        htmlRoot.setAttribute('lang', currentLanguage);
+
+        // Update all text elements
+        elements.forEach(element => {
+            const text = element.getAttribute(`data-${currentLanguage}`);
+            if (text) {
+                element.textContent = text;
+            }
+        });
+
+        // Update language toggle button
+        if (currentLanguage === 'en') {
+            langToggle.innerHTML = '🇹🇭 ไทย';
+            pageTitle.textContent = 'FlowTada - CRM Solutions for Growing Businesses';
+            pageDescription.setAttribute('content', 'Transform your business with FlowTada CRM. Streamline customer relationships, boost sales, and grow faster with our intuitive platform for small and medium businesses.');
+        } else {
+            langToggle.innerHTML = '🇺🇸 English';
+            pageTitle.textContent = 'FlowTada - โซลูชัน CRM สำหรับธุรกิจที่กำลังเติบโต';
+            pageDescription.setAttribute('content', 'เปลี่ยนแปลงธุรกิจของคุณด้วย FlowTada CRM ปรับปรุงความสัมพันธ์กับลูกค้า เพิ่มยอดขาย และเติบโตได้เร็วขึ้นด้วยแพลตฟอร์มที่ใช้งานง่าย');
+        }
+
+        // Apply Thai font when Thai is selected
+        if (currentLanguage === 'th') {
+            document.body.classList.add('thai-text');
+        } else {
+            document.body.classList.remove('thai-text');
+        }
+    }
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateLanguage();
+    });
+
+    // Mobile menu toggle - Fixed function
     function toggleMobileMenu() {
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenu.classList.toggle('active');
@@ -220,7 +344,7 @@
         const nav = document.querySelector('nav');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        if (!nav.contains(e.target)) {
+        if (nav && mobileMenu && !nav.contains(e.target)) {
             mobileMenu.classList.remove('active');
         }
     });
@@ -228,7 +352,10 @@
     // Close mobile menu when clicking a link
     document.querySelectorAll('.mobile-menu a').forEach(link => {
         link.addEventListener('click', function() {
-            document.getElementById('mobileMenu').classList.remove('active');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
         });
     });
     </script>
