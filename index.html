@@ -328,24 +328,69 @@
         }
     }
 
-    // Initialize language on page load
+    // Initialize language and mobile menu on page load
     document.addEventListener('DOMContentLoaded', function() {
         updateLanguage();
+
+        // Setup mobile menu link handlers
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const hamburger = document.querySelector('.hamburger');
+
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                }
+                if (hamburger) {
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
     });
 
-    // Mobile menu toggle - Fixed function
+    // Mobile menu toggle - Enhanced function
     function toggleMobileMenu() {
         const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('active');
+        const hamburger = document.querySelector('.hamburger');
+
+        if (mobileMenu) {
+            mobileMenu.classList.toggle('active');
+        }
+        if (hamburger) {
+            hamburger.classList.toggle('active');
+        }
+
+        // Debug log (remove this once it's working)
+        console.log('Mobile menu toggled:', mobileMenu?.classList.contains('active'));
     }
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
         const nav = document.querySelector('nav');
         const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
 
         if (nav && mobileMenu && !nav.contains(e.target)) {
             mobileMenu.classList.remove('active');
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
+        }
+    });
+
+    // Prevent menu from staying open when resizing to desktop
+    window.addEventListener('resize', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+
+        if (window.innerWidth > 768) {
+            if (mobileMenu) {
+                mobileMenu.classList.remove('active');
+            }
+            if (hamburger) {
+                hamburger.classList.remove('active');
+            }
         }
     });
 

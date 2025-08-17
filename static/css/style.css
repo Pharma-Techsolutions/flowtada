@@ -416,7 +416,7 @@ footer {
 }
 
 .mobile-menu.active {
-    display: flex;
+    display: flex !important;
 }
 
 .mobile-menu a {
@@ -458,6 +458,7 @@ footer {
     flex-direction: column;
     cursor: pointer;
     z-index: 1001;
+    padding: 5px;
 }
 
 .hamburger span {
@@ -466,9 +467,21 @@ footer {
     background: #333;
     margin: 3px 0;
     transition: 0.3s;
+    border-radius: 2px;
 }
 
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
 
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 
 
 /* Contact Form Mobile */
@@ -515,9 +528,17 @@ footer {
 }
 
 @media (min-width: 769px) {
-    .hamburger,
+    .hamburger {
+        display: none;
+    }
+
     .mobile-menu {
-        display: none !important;
+        display: none;
+    }
+
+
+    .mobile-menu.active {
+        display: none;
     }
 }
 
