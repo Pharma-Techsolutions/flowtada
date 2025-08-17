@@ -1,0 +1,55 @@
+<!-- templates/portal/dashboard.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard - FlowTada Portal{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/portal.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Welcome back, {{ user.first_name|default:user.username }}!</h1>
+        <p>Here's what's happening with your business today.</p>
+    </div>
+
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-number">152</div>
+            <div class="stat-label">Total Customers</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">$48,392</div>
+            <div class="stat-label">Monthly Revenue</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">23</div>
+            <div class="stat-label">Active Leads</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">89%</div>
+            <div class="stat-label">Customer Satisfaction</div>
+        </div>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="main-content">
+            <h2>Recent Activity</h2>
+            <p>Your recent customer interactions and sales activities will appear here.</p>
+            <!-- Add real dashboard content here -->
+        </div>
+
+        <div class="sidebar">
+            <h3>Quick Actions</h3>
+            <ul>
+                <li><a href="#">Add New Customer</a></li>
+                <li><a href="#">Create Invoice</a></li>
+                <li><a href="#">View Reports</a></li>
+                <li><a href="#">Manage Team</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

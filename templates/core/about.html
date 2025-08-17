@@ -1,0 +1,24 @@
+<!-- templates/core/about.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "About Us" %} - FlowTada{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 4rem 1rem; max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h1 style="font-size: 3rem; color: #2c3e50; margin-bottom: 1rem;">{% trans "About FlowTada" %}</h1>
+        <p style="font-size: 1.2rem; color: #7f8c8d; max-width: 600px; margin: 0 auto;">{% trans "Learn more about our mission to help businesses grow with smart CRM solutions." %}</p>
+    </div>
+
+    <!-- Add your about content here -->
+    <div style="margin-top: 3rem; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <h2 style="color: #2c3e50; margin-bottom: 1rem;">{% trans "Our Mission" %}</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">{% trans "To empower small and medium businesses with powerful, easy-to-use CRM tools that drive growth and success." %}</p>
+
+        <h2 style="color: #2c3e50; margin: 2rem 0 1rem 0;">{% trans "Why Choose FlowTada?" %}</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">{% trans "We understand the unique challenges faced by growing businesses and provide solutions that scale with your success." %}</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,167 @@
+# locale/th/LC_MESSAGES/django.po
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-17 01:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: flowtada/settings.py:129
+msgid "English"
+msgstr "อังกฤษ"
+
+#: flowtada/settings.py:130
+msgid "ไทย"
+msgstr "ไทย"
+
+#: templates/base.html:13
+msgid ""
+"Transform your business with FlowTada CRM. Streamline customer relationships "
+"and boost sales."
+msgstr "เปลี่ยนแปลงธุรกิจของคุณด้วย FlowTada CRM ปรับปรุงความสัมพันธ์กับลูกค้าและเพิ่มยอดขาย"
+
+#: templates/base.html:49 templates/base.html:88 templates/base.html:149
+msgid "Features"
+msgstr "คุณสมบัติ"
+
+#: templates/base.html:50 templates/base.html:89 templates/base.html:150
+msgid "Pricing"
+msgstr "ราคา"
+
+#: templates/base.html:51 templates/base.html:90
+msgid "About"
+msgstr "เกี่ยวกับเรา"
+
+#: templates/base.html:52 templates/base.html:91 templates/base.html:161
+msgid "Contact"
+msgstr "ติดต่อเรา"
+
+#: templates/base.html:73 templates/base.html:111
+msgid "Dashboard"
+msgstr "แดชบอร์ด"
+
+#: templates/base.html:74 templates/base.html:112
+msgid "Logout"
+msgstr "ออกจากระบบ"
+
+#: templates/base.html:76 templates/base.html:114
+msgid "Customer Portal"
+msgstr "พอร์ทัลลูกค้า"
+
+#: templates/base.html:77 templates/base.html:115
+msgid "Start Free Trial"
+msgstr "เริ่มทดลองใช้ฟรี"
+
+#: templates/base.html:144
+msgid ""
+"Empowering businesses with smart CRM solutions that drive growth and success."
+msgstr "เสริมพลังธุรกิจด้วยโซลูชัน CRM อัจฉริยะที่ขับเคลื่อนการเติบโตและความสำเร็จ"
+
+#: templates/base.html:147
+msgid "Product"
+msgstr "ผลิตภัณฑ์"
+
+#: templates/base.html:151
+msgid "Integrations"
+msgstr "การเชื่อมต่อ"
+
+#: templates/base.html:152
+msgid "API"
+msgstr "API"
+
+#: templates/base.html:156
+msgid "Company"
+msgstr "บริษัท"
+
+#: templates/base.html:158
+msgid "About Us"
+msgstr "เกี่ยวกับเรา"
+
+#: templates/base.html:159
+msgid "Careers"
+msgstr "ร่วมงานกับเรา"
+
+#: templates/base.html:160
+msgid "Press"
+msgstr "ข่าวสาร"
+
+#: templates/base.html:165
+msgid "Support"
+msgstr "ฝ่ายสนับสนุน"
+
+#: templates/base.html:167
+msgid "Help Center"
+msgstr "ศูนย์ช่วยเหลือ"
+
+#: templates/base.html:168
+msgid "Documentation"
+msgstr "เอกสารประกอบ"
+
+#: templates/base.html:169
+msgid "Community"
+msgstr "ชุมชน"
+
+#: templates/base.html:170
+msgid "Status"
+msgstr "สถานะระบบ"
+
+#: templates/base.html:175
+msgid "All rights reserved."
+msgstr "สงวนลิขสิทธิ์"
+
+#: templates/base.html:175
+msgid "Privacy Policy"
+msgstr "นโยบายความเป็นส่วนตัว"
+
+#: templates/base.html:175
+msgid "Terms of Service"
+msgstr "เงื่อนไขการใช้บริการ"
+
+#: templates/portal/login.html:6
+msgid "Login"
+msgstr "เข้าสู่ระบบ"
+
+#: templates/portal/login.html:16
+msgid "Welcome Back"
+msgstr "ยินดีต้อนรับกลับ"
+
+#: templates/portal/login.html:17
+msgid "Sign in to your FlowTada account"
+msgstr "เข้าสู่ระบบบัญชี FlowTada ของคุณ"
+
+#: templates/portal/login.html:32
+msgid "Username or Email"
+msgstr "ชื่อผู้ใช้หรืออีเมล"
+
+#: templates/portal/login.html:44
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+#: templates/portal/login.html:63
+msgid "Sign In"
+msgstr "เข้าสู่ระบบ"
+
+#: templates/portal/login.html:67
+msgid "Don't have an account?"
+msgstr "ยังไม่มีบัญชี?"
+
+#: templates/portal/login.html:67
+msgid "Start your free trial"
+msgstr "เริ่มทดลองใช้ฟรี"
+
+#: templates/portal/login.html:68
+msgid "Forgot your password?"
+msgstr "ลืมรหัสผ่าน?"

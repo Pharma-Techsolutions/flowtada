@@ -48,7 +48,6 @@ python manage.py collectstatic
 #### 2..5 Run development server
 ```
 python manage.py runserver
-<<<<<<< HEAD
 ```
 
 
@@ -57,6 +56,20 @@ I accidentally posted one of my secret keys publicly so I cleared the git cache
 git filter-branch --force --index-filter \
 'git rm --cached --ignore-unmatch flowtada/settings.py' \
 --prune-empty --tag-name-filter cat -- --all
-=======
->>>>>>> 64df69ce075b513cacf2561351803a4bf115fca4
+```
+
+if you want to see if your app is missing any items, run this code
+```
+python manage.py check
+```
+
+Run these below to create new apps
+```
+python manage.py startapp companies    # Multi-tenant company management
+python manage.py startapp contacts     # Universal contact management  
+python manage.py startapp products     # Products/services catalog
+python manage.py startapp inventory    # Inventory management
+python manage.py startapp leads        # Sales pipeline
+python manage.py startapp sales        # Transaction tracking
+python manage.py startapp teams        # Team & user management
 ```

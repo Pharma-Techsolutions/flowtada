@@ -45,7 +45,7 @@ nav {
 }
 
 .logo-img {
-    height: 60px;        /* Adjust this value */
+    height: 60px;
     width: auto;         /* Maintains aspect ratio */
     object-fit: contain;
 }
@@ -103,7 +103,7 @@ nav {
 
 .btn-secondary {
     background: transparent;
-    color: #ff6b35;
+    color: #e1e3e6;
     border: 2px solid #ff6b35;
 }
 
@@ -494,9 +494,22 @@ footer {
         display: flex;
     }
 
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
     /* Hide desktop buttons on mobile */
     .cta-buttons:not(.mobile-buttons) {
         display: none;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -669,9 +682,121 @@ footer {
     border-color: #ff6b35;
 }
 
+
+/* Language Switcher Styles */
+.language-switcher {
+    margin-right: 15px;
+}
+
+.language-select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-select:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.language-select option {
+    background: #1a1a1a;
+    color: white;
+    padding: 8px;
+}
+
+/* Mobile Language Switcher */
+.mobile-language-switcher {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+.language-select.mobile {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* Floating Language Switcher */
+.floating-language-switcher {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.lang-btn {
+    background: linear-gradient(135deg, #7b94ad 0%, #3a6da1 100%);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.lang-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lang-btn:active {
+    transform: translateY(0);
+}
+
+/* Thai Font Support */
+.thai-font {
+    font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+}
+
+/* RTL Support for Thai (if needed) */
+[dir="rtl"] {
+    text-align: right;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .form-row {
-        grid-template-columns: 1fr;
+    .language-switcher {
+        display: none; /* Hide desktop version on mobile */
+    }
+
+    .mobile-language-switcher {
+        display: block;
+    }
+
+    .floating-language-switcher {
+        right: 10px;
+        top: auto;
+        bottom: 20px;
+        transform: none;
+    }
+
+    .lang-btn {
+        padding: 10px 14px;
+        font-size: 13px;
     }
 }
 
+@media (min-width: 769px) {
+    .mobile-language-switcher {
+        display: none; /* Hide mobile version on desktop */
+    }
+}

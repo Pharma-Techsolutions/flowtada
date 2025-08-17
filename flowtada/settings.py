@@ -3,6 +3,7 @@
 from pathlib import Path
 import os
 from decouple import config
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,22 +33,27 @@ INSTALLED_APPS = [
     'rest_framework',
     'channels',  # For WebSocket real-time features
 
-    # Local apps - Universal CRM
-    'core',  # Marketing site
-    'companies',  # Multi-tenant company management
-    'contacts',  # Universal contact management
-    'products',  # Products/services catalog
-    'inventory',  # Inventory management
-    'leads',  # Sales pipeline
-    'sales',  # Transaction tracking
-    'teams',  # Team & user management
-    'analytics',  # Reporting & dashboard
+    # Local apps - ACTUAL EXISTING APPS
+    'core',  # Marketing site ✓ EXISTS
+    'customers',  # Customer management ✓ EXISTS
+    'portal',  # Customer portal ✓ EXISTS
+    'analytics',  # Analytics ✓ EXISTS
+
+    # Future apps (comment out until created)
+    # 'companies',  # Multi-tenant company management
+    # 'contacts',   # Universal contact management
+    # 'products',   # Products/services catalog
+    # 'inventory',  # Inventory management
+    # 'leads',      # Sales pipeline
+    # 'sales',      # Transaction tracking
+    # 'teams',      # Team & user management
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Static files
-    'companies.middleware.CompanyMiddleware',  # Custom: Tenant detection
+    # 'companies.middleware.CompanyMiddleware',  # Comment out until companies app exists
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,7 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'companies.context_processors.company_context',  # Add company to all templates
+                # 'companies.context_processors.company_context',  # Comment out until companies exists
             ],
         },
     },
@@ -118,11 +124,22 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
+# Add language settings:
+LANGUAGES = [
+    ('en', _('English')),
+    ('th', _('ไทย')),  # Thai
+]
+
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
+]
+
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
 ]
 
 # Media files
@@ -168,10 +185,10 @@ LOGIN_URL = '/portal/login/'
 LOGIN_REDIRECT_URL = '/portal/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 
-# Multi-tenant configuration
-TENANT_MODEL = 'companies.Company'
-TENANT_DOMAIN_FIELD = 'subdomain'
-PUBLIC_SCHEMA_NAME = 'public'
+# Multi-tenant configuration (enable when companies app is created)
+# TENANT_MODEL = 'companies.Company'
+# TENANT_DOMAIN_FIELD = 'subdomain'
+# PUBLIC_SCHEMA_NAME = 'public'
 
 # Email settings
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
@@ -226,7 +243,17 @@ LOGGING = {
             'level': 'INFO',
             'propagate': True,
         },
-        'companies': {
+        'customers': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'portal': {
+            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'analytics': {
             'handlers': ['file', 'console'],
             'level': 'DEBUG',
             'propagate': True,

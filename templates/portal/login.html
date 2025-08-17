@@ -1,0 +1,72 @@
+<!-- templates/portal/login.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %} - FlowTada Portal{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/portal.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="portal-container">
+    <div class="portal-card">
+        <div class="portal-header">
+            <h1>{% trans "Welcome Back" %}</h1>
+            <p>{% trans "Sign in to your FlowTada account" %}</p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post" class="portal-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">{% trans "Username or Email" %}</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="alert alert-error">
+                        {% for error in form.username.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}">{% trans "Password" %}</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="alert alert-error">
+                        {% for error in form.password.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-error">
+                    {% for error in form.non_field_errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <button type="submit" class="btn-login">{% trans "Sign In" %}</button>
+        </form>
+
+        <div class="portal-footer">
+            <p>{% trans "Don't have an account?" %} <a href="{% url 'core:home' %}">{% trans "Start your free trial" %}</a></p>
+            <p><a href="#">{% trans "Forgot your password?" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -4,6 +4,7 @@ djangorestframework==3.14.0
 
 # Database
 psycopg2-binary==2.9.7  # PostgreSQL (for production)
+dj-database-url==2.1.0  # Database URL parsing
 
 # Environment
 python-decouple==3.8
@@ -11,19 +12,37 @@ python-decouple==3.8
 # Image handling
 Pillow==10.0.1
 
+# Real-time WebSocket support
+channels==4.0.0
+channels-redis==4.1.0
+
+# Authentication & Security
+djangorestframework-simplejwt==5.3.0
+
+# Caching
+redis==5.0.1
+
+# Static files
+whitenoise==6.6.0
+
 # Development tools
 django-debug-toolbar==4.2.0
 
 # Production
 gunicorn==21.2.0
-whitenoise==6.6.0
 
 # Security
 django-cors-headers==4.3.1
 
-# Background tasks (optional)
+# Background tasks
 celery==5.3.4
-redis==5.0.1
 
 # Email
 django-ses==3.5.0  # AWS SES integration
+
+# Utilities
+django-extensions==3.2.3
+django-crispy-forms==2.1
+
+# API documentation
+drf-spectacular==0.27.0

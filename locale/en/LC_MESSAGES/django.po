@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-17 01:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: flowtada/settings.py:129
+msgid "English"
+msgstr ""
+
+#: flowtada/settings.py:130
+msgid "ไทย"
+msgstr ""
+
+#: templates/base.html:13
+msgid ""
+"Transform your business with FlowTada CRM. Streamline customer relationships "
+"and boost sales."
+msgstr ""
+
+#: templates/base.html:49 templates/base.html:88 templates/base.html:149
+msgid "Features"
+msgstr ""
+
+#: templates/base.html:50 templates/base.html:89 templates/base.html:150
+msgid "Pricing"
+msgstr ""
+
+#: templates/base.html:51 templates/base.html:90
+msgid "About"
+msgstr ""
+
+#: templates/base.html:52 templates/base.html:91 templates/base.html:161
+msgid "Contact"
+msgstr ""
+
+#: templates/base.html:73 templates/base.html:111
+msgid "Dashboard"
+msgstr ""
+
+#: templates/base.html:74 templates/base.html:112
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:76 templates/base.html:114
+msgid "Customer Portal"
+msgstr ""
+
+#: templates/base.html:77 templates/base.html:115
+msgid "Start Free Trial"
+msgstr ""
+
+#: templates/base.html:144
+msgid ""
+"Empowering businesses with smart CRM solutions that drive growth and success."
+msgstr ""
+
+#: templates/base.html:147
+msgid "Product"
+msgstr ""
+
+#: templates/base.html:151
+msgid "Integrations"
+msgstr ""
+
+#: templates/base.html:152
+msgid "API"
+msgstr ""
+
+#: templates/base.html:156
+msgid "Company"
+msgstr ""
+
+#: templates/base.html:158
+msgid "About Us"
+msgstr ""
+
+#: templates/base.html:159
+msgid "Careers"
+msgstr ""
+
+#: templates/base.html:160
+msgid "Press"
+msgstr ""
+
+#: templates/base.html:165
+msgid "Support"
+msgstr ""
+
+#: templates/base.html:167
+msgid "Help Center"
+msgstr ""
+
+#: templates/base.html:168
+msgid "Documentation"
+msgstr ""
+
+#: templates/base.html:169
+msgid "Community"
+msgstr ""
+
+#: templates/base.html:170
+msgid "Status"
+msgstr ""
+
+#: templates/base.html:175
+msgid "All rights reserved."
+msgstr ""
+
+#: templates/base.html:175
+msgid "Privacy Policy"
+msgstr ""
+
+#: templates/base.html:175
+msgid "Terms of Service"
+msgstr ""
+
+#: templates/portal/login.html:6
+msgid "Login"
+msgstr ""
+
+#: templates/portal/login.html:16
+msgid "Welcome Back"
+msgstr ""
+
+#: templates/portal/login.html:17
+msgid "Sign in to your FlowTada account"
+msgstr ""
+
+#: templates/portal/login.html:32
+msgid "Username or Email"
+msgstr ""
+
+#: templates/portal/login.html:44
+msgid "Password"
+msgstr ""
+
+#: templates/portal/login.html:63
+msgid "Sign In"
+msgstr ""
+
+#: templates/portal/login.html:67
+msgid "Don't have an account?"
+msgstr ""
+
+#: templates/portal/login.html:67
+msgid "Start your free trial"
+msgstr ""
+
+#: templates/portal/login.html:68
+msgid "Forgot your password?"
+msgstr ""
